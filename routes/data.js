@@ -16,6 +16,13 @@ router.get('/experiments', (req, res) => {
 
 /**
  * For cuisine aggregated by area points
+ * returns array of objects of type
+ * {
+ *  location: { lat, lon },
+ *  cuisine_name_1: number_of_items_of_cuisine_1,
+ *  cuisine_name_2: number_of_items_of_cuisine_2,
+ *  ...
+ *  }
  */
 router.get('/cuisine_geohash', (req, res) => {
     const collection = db.get().collection('cuisine_geohash');
