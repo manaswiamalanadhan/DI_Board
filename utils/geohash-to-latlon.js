@@ -1,11 +1,9 @@
-var GeoHash = require('latlon-geohash');
+const GeoHash = require('latlon-geohash');
 
 /**
  * return {lat:'', lon: ''} for a given geohash
- * @param {} geohash 
+ * @param geohash
  */
-var GeoHashToLatLon = (geohash) => {
-    return GeoHash.decode(geohash);
-};
+const GeoHashToLatLon = geohash => GeoHash.decode(geohash);
 
 module.exports = GeoHashToLatLon;
