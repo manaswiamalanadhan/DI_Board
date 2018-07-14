@@ -29,7 +29,6 @@ router.get('/cuisine_geohash', (req, res) => {
 
     collection.find({}).toArray((err, docs) => {
         res.send(docs.map( doc => {
-            // console.log('converting', data._id);
             doc.location = geoHashConverter(doc._id);
             delete doc._id;
             const cuisines = doc.cuisines.reduce((cum, cur) => { //cumulative, current
